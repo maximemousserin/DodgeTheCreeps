@@ -14,7 +14,7 @@ config/name="DodgeTheCreeps"
 run/main_scene="res://src/Main.tscn"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 run/max_fps=60
-config/icon="res://icon.png"
+config/icon="uid://or3qt1jm0m1a"
 
 [display]
 
