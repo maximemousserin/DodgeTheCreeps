@@ -1,0 +1,11 @@
+keys,en,fr
+game_over_title,Game Over,Perdu
+game_over_desc,Unlucky ?,Pas de chance ?
+state_paused,Paused,En pause
+button_resume,Resume,Reprise
+button_save,Save,Enregistrer
+button_main_menu,Main Menu,Menu principal
+state_saving,Saving...,Sauvegarde en cours...
+button_try_again,Try again,Ressayer
+button_new_game,New Game,Nouvelle partie
+button_load_game,Load Game,Charger une partie

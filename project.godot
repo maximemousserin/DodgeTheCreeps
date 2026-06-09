@@ -81,6 +81,10 @@ start_game={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/godot_translations.en.translation", "res://Assets/godot_translations.fr.translation")
+
 [layer_names]
 
 2d_physics/layer_1="mobs"

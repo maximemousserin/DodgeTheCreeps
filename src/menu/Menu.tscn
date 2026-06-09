@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ceo4se7s2b4eh" path="res://src/menu/Menu.cs" id="1_or2kc"]
 [ext_resource type="Theme" uid="uid://du7cpo82dm3le" path="res://Assets/theme.tres" id="2_kwft6"]
+[ext_resource type="Texture2D" uid="uid://cgd88gys6r1yp" path="res://Assets/flags/en.png" id="3_51sfq"]
+[ext_resource type="Texture2D" uid="uid://btvqps4e80fjo" path="res://Assets/flags/fr.png" id="4_jvbb0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq8ij"]
 bg_color = Color(1, 1, 1, 0.219608)
@@ -104,7 +106,7 @@ custom_minimum_size = Vector2(2.08165e-12, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_kwft6")
-text = "New Game"
+text = "button_new_game"
 
 [node name="LoadGameButton" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=289233875]
 unique_name_in_owner = true
@@ -112,8 +114,31 @@ custom_minimum_size = Vector2(2.08165e-12, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_kwft6")
-text = "Load Game"
+text = "button_load_game"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1029245480]
 layout_mode = 2
-theme_override_constants/margin_top = 160
+theme_override_constants/margin_top = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=55732690]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="LangEnButton" type="TextureButton" parent="MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer" unique_id=761947116]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("3_51sfq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LangFrButton" type="TextureButton" parent="MarginContainer/VBoxContainer3/VBoxContainer2/HBoxContainer" unique_id=69380572]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("4_jvbb0")
+ignore_texture_size = true
+stretch_mode = 0
