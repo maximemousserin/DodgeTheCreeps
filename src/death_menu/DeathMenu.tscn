@@ -211,14 +211,14 @@ theme_override_constants/margin_bottom = 24
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=2124511976]
 layout_mode = 2
 theme = SubResource("Theme_q4lnh")
-text = "Game Over"
+text = "game_over_title"
 label_settings = SubResource("LabelSettings_7gk1r")
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2070857110]
 layout_mode = 2
 theme = ExtResource("3_oj3we")
-text = ":("
+text = "game_over_desc"
 label_settings = SubResource("LabelSettings_jxos6")
 horizontal_alignment = 1
 
@@ -238,7 +238,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("3_oj3we")
 theme_override_colors/font_color = Color(1, 0.501961, 0.435294, 1)
-text = "Try Again"
+text = "button_try_again"
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=2113203600]
 unique_name_in_owner = true
@@ -248,7 +248,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("3_oj3we")
 theme_override_colors/font_color = Color(1, 0.501961, 0.435294, 1)
-text = "Main Menu"
+text = "button_main_menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=823407504]
 unique_name_in_owner = true

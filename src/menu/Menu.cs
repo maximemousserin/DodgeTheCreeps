@@ -17,10 +17,10 @@ public partial class Menu : Control, IMenu
   public override void _Notification(int what) => this.Notify(what);
 
   #region Nodes
-  [Node]
-  public IButton NewGameButton { get; set; } = default!;
-  [Node]
-  public IButton LoadGameButton { get; set; } = default!;
+  [Node] public IButton NewGameButton { get; set; } = default!;
+  [Node] public IButton LoadGameButton { get; set; } = default!;
+  [Node] public ITextureButton LangEnButton { get; set; } = default!;
+  [Node] public ITextureButton LangFrButton { get; set; } = default!;
   #endregion Nodes
 
   #region Signals
@@ -34,14 +34,25 @@ public partial class Menu : Control, IMenu
   {
     NewGameButton.Pressed += OnNewGamePressed;
     LoadGameButton.Pressed += OnLoadGamePressed;
+
+    LangEnButton.Pressed += OnLangEnButtonPressed;
+    LangFrButton.Pressed += OnLangFrButtonPressed;
   }
 
   public void OnExitTree()
   {
     NewGameButton.Pressed -= OnNewGamePressed;
     LoadGameButton.Pressed -= OnLoadGamePressed;
+
+    LangEnButton.Pressed -= OnLangEnButtonPressed;
+    LangFrButton.Pressed -= OnLangFrButtonPressed;
   }
 
   public void OnNewGamePressed() => EmitSignal(SignalName.NewGame);
   public void OnLoadGamePressed() => EmitSignal(SignalName.LoadGame);
+
+  public void OnLangEnButtonPressed() => ChangeLang("en");
+  public void OnLangFrButtonPressed() => ChangeLang("fr");
+
+  private static void ChangeLang(string lang) => TranslationServer.SetLocale(lang);
 }
