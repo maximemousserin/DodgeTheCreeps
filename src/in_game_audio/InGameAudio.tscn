@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://be3pehf5e67m5"]
+
+[ext_resource type="Script" uid="uid://c2g7mpfm4y61b" path="res://src/in_game_audio/InGameAudio.cs" id="1_hobj4"]
+[ext_resource type="AudioStream" uid="uid://td2mgko63p61" path="res://Assets/art/gameover.wav" id="3_wj24m"]
+[ext_resource type="AudioStream" uid="uid://sgfduhhw4pno" path="res://Assets/art/House In a Forest Loop.ogg" id="5_wj24m"]
+[ext_resource type="PackedScene" uid="uid://cac8acl84d1ul" path="res://src/in_game_audio/DimmableAudioStreamPlayer.tscn" id="7_rirec"]
+
+[node name="InGameAudio" type="Node" unique_id=1719865033]
+process_mode = 3
+script = ExtResource("1_hobj4")
+
+[node name="PlayerDied" type="AudioStreamPlayer" parent="." unique_id=556770852]
+unique_name_in_owner = true
+stream = ExtResource("3_wj24m")
+volume_db = -11.718
+max_polyphony = 2
+
+[node name="GameMusic" parent="." unique_id=1033850023 instance=ExtResource("7_rirec")]
+unique_name_in_owner = true
+stream = ExtResource("5_wj24m")
+volume_db = -20.0
+
+[node name="MainMenuMusic" parent="." unique_id=910664360 instance=ExtResource("7_rirec")]
+unique_name_in_owner = true
+stream = ExtResource("5_wj24m")
+volume_db = -16.267

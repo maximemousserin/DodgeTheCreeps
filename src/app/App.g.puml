@@ -1,0 +1,272 @@
+@startuml
+
+package App-Type [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs]] {
+    class App  {
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs ScriptFile]]
+        [Provisions]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:32 IAppRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs Script]]
+        --
+        [Properties]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:49 AnimationPlayer]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:41 AppBinding]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:39 AppLogic]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/state/states/SplashScreen.cs Script]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:38 AppRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs Script]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:48 BlankScreen]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:25 Game]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs Script]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:26 Instantiator]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/utils/Instantiator.cs Script]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:47 Menu]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs Script]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:50 Splash]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs Script]]
+        --
+        [Methods]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:15 _Notification()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:148 FadeInFromBlack()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:154 FadeToBlack()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:160 HideMenus()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:54 Initialize()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:132 OnAnimationFinished()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:166 OnExitTree()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:130 OnLoadGame()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:128 OnNewGame()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:72 OnReady()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/App.cs:178 OnSaveFileLoaded()]]
+    }
+    class AppRepo  {
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs ScriptFile]]
+        [Interface Methods]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs:58 OnEnterGame()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs:59 OnExitGame()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs:56 OnMainMenuEntered()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs:54 SkipSplashScreen()]]
+        [Methods]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs:63 Dispose()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs:80 Dispose()]]
+    }
+    package Game-Type [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs]] {
+        class Game  {
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs ScriptFile]]
+            [Dependencies]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:83 AppRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs Script]]
+            [Provisions]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:77 IGameRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs Script]]
+            --
+            [Properties]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:64 DeathMenu]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:43 EntityTable]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:41 Environment]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:40 FileSystem]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:56 GameBinding]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:46 GameChunk]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:54 GameLogic]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/state/states/Resuming.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:53 GameRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:63 InGameUi]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:38 JsonOptions]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:70 MobPath]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:71 Mobs]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:66 MobTimer]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:65 PauseMenu]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:62 Player]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:45 SaveFile]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:42 SaveFilePath]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:67 ScoreTimer]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:69 StartPosition]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:68 StartTimer]]
+            --
+            [Interface Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:283 LoadExistingGame()]]
+            [Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:238 _Input()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:26 _Notification()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:289 FinishedLoadingSaveFile()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:294 HandleSpawnMob()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:261 OnDeathMenuTransitioned()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:264 OnExitTree()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:246 OnMainMenu()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:314 OnMobTimerTimeout()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:258 OnPauseMenuSaveRequested()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:255 OnPauseMenuTransitioned()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:149 OnResolved()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:249 OnResume()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:315 OnScoreTimerTimeout()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:252 OnStart()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:316 OnStartTimerTimeout()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:292 SetPauseMode()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/Game.cs:87 Setup()]]
+        }
+        class DeathMenu  {
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs ScriptFile]]
+            [Properties]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:37 AnimationPlayer]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:38 FadeAnimationPlayer]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:36 MainMenuButton]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:35 TryAgainButton]]
+            --
+            [Interface Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:56 Animate()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:59 FadeIn()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:61 FadeOut()]]
+            [Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:22 _Notification()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:67 OnAnimationFinished()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:49 OnExitTree()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:65 OnMainMenuPressed()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:42 OnReady()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/death_menu/DeathMenu.cs:63 OnTryAgainPressed()]]
+        }
+        class GameRepo  {
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs ScriptFile]]
+            [Constructors]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:70 GameRepo]]()
+            [Interface Properties]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:59 IsMouseCaptured]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:61 IsPaused]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:63 PlayerGlobalPosition]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:65 ScoreChanged]]
+            --
+            [Interface Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:139 IncreaseScore()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:97 OnGameEnded()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:104 Pause()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:110 Resume()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:94 SetIsMouseCaptured()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:91 SetPlayerGlobalPosition()]]
+            [Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:118 Dispose()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs:133 Dispose()]]
+        }
+        class InGameUI  {
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs ScriptFile]]
+            [Dependencies]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:20 AppRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:21 GameRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs Script]]
+            --
+            [Properties]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:35 InGameUIBinding]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:33 InGameUILogic]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/state/InGameUILogic.State.cs Script]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:27 ScoreLabel]]
+            --
+            [Interface Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:65 SetScoreLabel()]]
+            [Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:16 _Notification()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:59 OnExitTree()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:41 OnResolved()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/in_game_ui/InGameUI.cs:39 Setup()]]
+        }
+        class PauseMenu  {
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs ScriptFile]]
+            [Properties]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:32 AnimationPlayer]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:31 MainMenuButton]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:29 ResumeButton]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:30 SaveButton]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:34 SaveOverlay]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:33 SaveOverlayAnimationPlayer]]
+            --
+            [Interface Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:74 FadeIn()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:79 FadeOut()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:82 OnSaveCompleted()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:81 OnSaveStarted()]]
+            [Methods]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:25 _Notification()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:85 Animate()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:76 OnAnimationFinished()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:62 OnExitTree()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:70 OnMainMenuPressed()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:54 OnReady()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:71 OnResumePressed()]]
+            [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/pause_menu/PauseMenu.cs:72 OnSavePressed()]]
+        }
+        package Player-Type [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs]] {
+            class Player  {
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs ScriptFile]]
+                [Dependencies]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:44 GameRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/game/domain/GameRepo.cs Script]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:47 AppRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs Script]]
+                [Provisions]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:38 IPlayerLogic]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/state/states/PlayerLogic.State.Disabled.cs Script]]
+                --
+                [Interface Properties]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:62 PlayerLogic]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/state/states/PlayerLogic.State.Disabled.cs Script]]
+                [Properties]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:72 CollisionShape2D]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:55 MoveSpeed]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:65 PlayerBinding]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:33 PlayerChunk]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:69 PlayerModel]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/PlayerModel.cs Script]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:67 ScreenSize]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:63 Settings]]
+                --
+                [Interface Methods]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:177 Start()]]
+                [Methods]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:25 _Notification()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:154 _Process()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:187 Kill()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:179 OnBodyEntered()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:96 OnExitTree()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:89 OnReady()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:103 OnResolved()]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/Player.cs:77 Setup()]]
+            }
+            class PlayerModel  {
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/PlayerModel.cs ScriptFile]]
+                [Interface Properties]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/PlayerModel.cs:21 AnimatedSprite2D]]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/PlayerModel.cs:24 Trail]]
+                --
+                [Methods]
+                [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/player/PlayerModel.cs:17 _Notification()]]
+            }
+            Player::PlayerModel ---> PlayerModel
+        }
+        Game::DeathMenu ---> DeathMenu
+        Game::GameRepo ---> GameRepo
+        Game::InGameUI ---> InGameUI
+        Game::PauseMenu ---> PauseMenu
+        Game::Player ---> Player
+    }
+    class Instantiator  {
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/utils/Instantiator.cs ScriptFile]]
+        [Interface Properties]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/utils/Instantiator.cs:27 SceneTree]]
+        --
+        [Interface Methods]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/utils/Instantiator.cs:34 LoadAndInstantiate()]]
+    }
+    class Menu  {
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs ScriptFile]]
+        [Properties]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:22 LoadGameButton]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:20 NewGameButton]]
+        --
+        [Methods]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:17 _Notification()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:39 OnExitTree()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:46 OnLoadGamePressed()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:45 OnNewGamePressed()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/Menu.cs:33 OnReady()]]
+    }
+    class Splash  {
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs ScriptFile]]
+        [Dependencies]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:21 AppRepo]] - [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/app/domain/AppRepo.cs Script]]
+        --
+        [Properties]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:16 AnimationPlayer]]
+        --
+        [Methods]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:34 _Input()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:13 _Notification()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:31 OnAnimationFinished()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:28 OnExitTree()]]
+        [[vscode://file/c:/Users/maxim/Documents/Godot/DodgeTheCreeps/src/menu/splash/Splash.cs:25 OnReady()]]
+    }
+    App::AppRepo ---> AppRepo
+    App::Game ---> Game
+    App::Instantiator ---> Instantiator
+    App::Menu ---> Menu
+    App::Splash ---> Splash
+}
+
+@enduml

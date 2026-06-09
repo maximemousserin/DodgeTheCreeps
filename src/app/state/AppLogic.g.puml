@@ -1,0 +1,31 @@
+@startuml AppLogic
+state "AppLogic State" as DodgeTheCreeps_AppLogic_State {
+  state "InGame" as DodgeTheCreeps_AppLogic_State_InGame
+  state "LeavingGame" as DodgeTheCreeps_AppLogic_State_LeavingGame
+  state "LeavingMenu" as DodgeTheCreeps_AppLogic_State_LeavingMenu
+  state "LoadingSaveFile" as DodgeTheCreeps_AppLogic_State_LoadingSaveFile
+  state "MainMenu" as DodgeTheCreeps_AppLogic_State_MainMenu
+  state "SplashScreen" as DodgeTheCreeps_AppLogic_State_SplashScreen
+}
+
+DodgeTheCreeps_AppLogic_State_InGame --> DodgeTheCreeps_AppLogic_State_LeavingGame : EndGame
+DodgeTheCreeps_AppLogic_State_LeavingGame --> DodgeTheCreeps_AppLogic_State_InGame : FadeOutFinished
+DodgeTheCreeps_AppLogic_State_LeavingGame --> DodgeTheCreeps_AppLogic_State_MainMenu : FadeOutFinished
+DodgeTheCreeps_AppLogic_State_LeavingMenu --> DodgeTheCreeps_AppLogic_State_InGame : FadeOutFinished
+DodgeTheCreeps_AppLogic_State_LeavingMenu --> DodgeTheCreeps_AppLogic_State_LoadingSaveFile : FadeOutFinished
+DodgeTheCreeps_AppLogic_State_LoadingSaveFile --> DodgeTheCreeps_AppLogic_State_InGame : SaveFileLoaded
+DodgeTheCreeps_AppLogic_State_MainMenu --> DodgeTheCreeps_AppLogic_State_LeavingMenu : LoadGame
+DodgeTheCreeps_AppLogic_State_MainMenu --> DodgeTheCreeps_AppLogic_State_LeavingMenu : NewGame
+DodgeTheCreeps_AppLogic_State_SplashScreen --> DodgeTheCreeps_AppLogic_State_MainMenu : FadeOutFinished
+
+DodgeTheCreeps_AppLogic_State_InGame : OnEnter → ShowGame
+DodgeTheCreeps_AppLogic_State_InGame : OnExit → HideGame
+DodgeTheCreeps_AppLogic_State_LeavingGame : OnFadeOutFinished → RemoveExistingGame, SetupGameScene
+DodgeTheCreeps_AppLogic_State_LeavingMenu : OnEnter → FadeToBlack
+DodgeTheCreeps_AppLogic_State_LoadingSaveFile : OnEnter → StartLoadingSaveFile
+DodgeTheCreeps_AppLogic_State_MainMenu : OnEnter → SetupGameScene, ShowMainMenu
+DodgeTheCreeps_AppLogic_State_SplashScreen : OnEnter → ShowSplashScreen
+DodgeTheCreeps_AppLogic_State_SplashScreen : OnSplashScreenSkipped() → HideSplashScreen
+
+[*] --> DodgeTheCreeps_AppLogic_State_SplashScreen
+@enduml

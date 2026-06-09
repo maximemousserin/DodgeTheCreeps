@@ -1,0 +1,15 @@
+@startuml PlayerLogic
+state "PlayerLogic State" as DodgeTheCreeps_PlayerLogic_State {
+  state "Alive" as DodgeTheCreeps_PlayerLogic_State_Alive
+  state "Disabled" as DodgeTheCreeps_PlayerLogic_State_Disabled
+}
+
+DodgeTheCreeps_PlayerLogic_State_Alive --> DodgeTheCreeps_PlayerLogic_State_Alive : Moving
+DodgeTheCreeps_PlayerLogic_State_Alive --> DodgeTheCreeps_PlayerLogic_State_Disabled : Killed
+DodgeTheCreeps_PlayerLogic_State_Disabled --> DodgeTheCreeps_PlayerLogic_State_Alive : Start
+
+DodgeTheCreeps_PlayerLogic_State_Alive : OnEnter → Started
+DodgeTheCreeps_PlayerLogic_State_Alive : OnMoving → Moved
+
+[*] --> DodgeTheCreeps_PlayerLogic_State_Disabled
+@enduml

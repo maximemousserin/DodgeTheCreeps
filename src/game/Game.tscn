@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cywpu6lxdjhuu"]
+
+[ext_resource type="Script" uid="uid://d3gnuv1uga3om" path="res://src/game/Game.cs" id="1_17mmo"]
+[ext_resource type="PackedScene" uid="uid://cyoxrxh5jkkeq" path="res://src/player/Player.tscn" id="4_smjqx"]
+[ext_resource type="PackedScene" uid="uid://d3qf2po8l4dlr" path="res://src/in_game_ui/InGameUI.tscn" id="5_w4lns"]
+[ext_resource type="PackedScene" uid="uid://be3pehf5e67m5" path="res://src/in_game_audio/InGameAudio.tscn" id="6_wnbqg"]
+[ext_resource type="PackedScene" uid="uid://bn84ofaaq4o80" path="res://src/death_menu/DeathMenu.tscn" id="7_35ldn"]
+[ext_resource type="PackedScene" uid="uid://conmng5ejji6f" path="res://src/pause_menu/PauseMenu.tscn" id="9_yxma7"]
+
+[sub_resource type="Curve2D" id="1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=1295162323]
+process_mode = 3
+script = ExtResource("1_17mmo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1008898284]
+process_mode = 3
+process_priority = 1
+
+[node name="InGameUi" parent="CanvasLayer" unique_id=1148283132 instance=ExtResource("5_w4lns")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseContainer" type="Node2D" parent="CanvasLayer" unique_id=1214727184]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="Mobs" type="Node2D" parent="CanvasLayer/PauseContainer" unique_id=30964103]
+unique_name_in_owner = true
+
+[node name="Player" parent="CanvasLayer/PauseContainer" unique_id=2141725708 instance=ExtResource("4_smjqx")]
+unique_name_in_owner = true
+
+[node name="MobTimer" type="Timer" parent="CanvasLayer/PauseContainer" unique_id=228987391]
+unique_name_in_owner = true
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="CanvasLayer/PauseContainer" unique_id=451982858]
+unique_name_in_owner = true
+
+[node name="StartTimer" type="Timer" parent="CanvasLayer/PauseContainer" unique_id=238316384]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="CanvasLayer/PauseContainer" unique_id=568887530]
+unique_name_in_owner = true
+position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="CanvasLayer/PauseContainer" unique_id=694323229]
+unique_name_in_owner = true
+curve = SubResource("1")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="CanvasLayer/PauseContainer/MobPath" unique_id=1080274542]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=2081638504 instance=ExtResource("9_yxma7")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DeathMenu" parent="CanvasLayer" unique_id=1937519048 instance=ExtResource("7_35ldn")]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 1
+
+[node name="InGameAudio" parent="." unique_id=1399134061 instance=ExtResource("6_wnbqg")]
+
+[editable path="CanvasLayer/InGameUi"]

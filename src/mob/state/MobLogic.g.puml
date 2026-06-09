@@ -1,0 +1,13 @@
+@startuml MobLogic
+state "MobLogic State" as DodgeTheCreeps_MobLogic_State {
+  state "Moving" as DodgeTheCreeps_MobLogic_State_Moving
+}
+
+DodgeTheCreeps_MobLogic_State_Moving --> DodgeTheCreeps_MobLogic_State_Moving : Initialize
+DodgeTheCreeps_MobLogic_State_Moving --> DodgeTheCreeps_MobLogic_State_Moving : LeaveScreen
+
+DodgeTheCreeps_MobLogic_State_Moving : OnInitialize → AnimationSelected
+DodgeTheCreeps_MobLogic_State_Moving : OnLeaveScreen → Gone
+
+[*] --> DodgeTheCreeps_MobLogic_State_Moving
+@enduml
